@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+</head>
+<body class="flex flex-col bg-gray-100 p-6 gap-6">
+
+    <!-- Tracking, harfler arasında boşlukları ayarlamak için kullanılır. -->
+
+    <!-- Tracking ile kullanılabilecek seçenekler şunlardır: 
+     * tracking-tighter -- harfleri birbirine çok yaklaştırır. 
+     * tracking-tight -- harfleri birbirine yaklaştırır. 
+     * tracking-normal -- normal boşlukları ayarlar.
+     * tracking-wide -- harfler arasında daha fazla boşluk bırakır.
+     * tracking-wider -- harfler arasında daha fazla boşluk bırakır.
+     * tracking-widest -- harfler arasında en fazla boşluk bırakır. -->
+
+     <!-- Başlıklarda -->
+
+     <h1 class="text-3xl font-bold tracking-tight">
+         Modern Tasarım
+    </h1>
+
+    <!-- Küçük rozetlerde -->
+
+    <!-- Rozetlerde özellikle "uppercase tracking-wider" kullanılır. Çünkü yazı küçük olucağu için harfler arası açılınca daha okunulur olur. -->
+    <span class="text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">
+          Popüler
+    </span>
+
+    <!-- Kategori isimleri -->
+
+    <h2 class="text-sm font-bold uppercase tracking-wider text-gray-700">
+            Bilgisayar
+    </h2>
+    
+    <!-- Navbar menüleri -->
+     <nav class="text-sm uppercase tracking-wide">
+        Anasayfa
+    </nav>
+
+    <!-- Butonlarda -->
+
+    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-xs font-bold tracking-wide">
+        SATIN AL
+    </button>
+
+    <!-- Paragraflarda -->
+
+    <div class="space-y-4 p-6">
+
+        <p class="tracking-tighter">
+            tracking-tighter yazı
+        </p>
+
+        <p class="tracking-tight">
+            tracking-tight yazı
+        </p>
+
+        <p class="tracking-normal">
+            tracking-normal yazı
+        </p>
+
+        <p class="tracking-wide">
+            tracking-wide yazı
+        </p>
+
+        <p class="tracking-wider">
+            tracking-wider yazı
+        </p>
+
+        <p class="tracking-widest">
+            tracking-widest yazı
+        </p>
+    </div>
+</body>
+</html>
