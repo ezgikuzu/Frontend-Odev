@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Ödev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+    
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Javascript Method Örnekleri</h1>
+    </div><br>
+    <p class="text-gray-600 mb-6 max-w-3xl mx-auto text-center">
+        Bu sayfa map, find, filter, some, every, push, includes, toLowerCase, toUpperCase, trim, split, join, slice, parseFlat, setınterval, clearınternal metotlarının örnekleri verilecek. 
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- MAP - Bir dizideki her elemanı değiştirio yeni bir dizi oluşturur. -->
+        <div class="bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl text-center font-bold text-blue-600 mb-2">map()</h2>
+            <p class="text-sm text-center text-gray-600 mb-3">
+                Sayıları 2 ile çarp. 
+            </p><br>
+            <div class="flex justify-center">
+            <button onclick="mapExample()" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Çalıştır</button>
+            </div>
+            <p id="mapSonuc" class="mt-3 font-semibold text-center text-blue-600"></p>
+        </div>
+
+        <!-- FİND - şarta uyan ilk elemanı bulur.  -->
+         <div class="bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl text-center font-bold text-green-600 mb-2">find()</h2>
+            <p class="text-sm text-center text-gray-600 mb-3">
+                18 yaşından büyük olan ilk kişiyi bul.
+            </p><br>
+            <div class="flex justify-center">
+            <button onclick="findExample()" class="bg-green-600 text-white px-4 py-2 rounded-lg">Çalıştır</button>
+            </div>
+            <p id="findSonuc" class="mt-3 font-semibold text-center text-green-600"></p>
+         </div>
+
+         <!-- REDUCE - dizideki elemanları birleştirir. / Genelde toplam almak için kullanılır.-->
+        <div class="bg-white p-5 rounded-xl shadow">
+            <h2 class="text-xl text-center font-bold text-purple-600 mb-2">reduce()</h2>
+            <p class="text-sm text-center text-gray-600 mb-3">
+                Sepetteki fiyatları toplar.
+            </p><br>
+            <div class="flex justify-center">
+            <button onclick="reduceOrnek()" class="bg-purple-600 text-white px-4 py-2 rounded-lg">
+                Çalıştır
+            </button>
+            </div>
+            <p id="reduceSonuc" class="mt-3 font-semibold text-center text-purple-600"></p>
+        </div>
+
+         <!-- FİLTER - Şarta uyan elemanları seçip yeni dizi yapar.  -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-pink-600 mb-2">filter()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          50’den büyük notları filtreler.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="filterOrnek()" class="bg-pink-600 text-white px-4 py-2 rounded-lg">
+          Çalıştır
+        </button>
+        </div>
+        <p id="filterSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- SOME- En az bir eleman şartı sağlıyor mu diye bakar. -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-yellow-600 mb-2">some()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          En az bir ürün stokta var mı?
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="someOrnek()" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">
+          Çalıştır
+        </button>
+        </div>
+        <p id="someSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- EVERY - Tüm elemanlr şartı sağlıyor mu diye bakar. -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-red-600 mb-2">every()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Herkes sınavdan geçti mi?
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="everyOrnek()" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+          Çalıştır
+        </button>
+        </div>
+        <p id="everySonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- PUSH - Dizi sonuna yeni eleman ekler.-->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-indigo-600 mb-2">push()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Listeye yeni meyve ekler.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="pushOrnek()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+          Meyve Ekle
+        </button>
+        </div>
+        <p id="pushSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- İNCLUDERS - Bir değer var mı diye kontrol eder. -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-teal-600 mb-2">includes()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Listede İstanbul var mı?
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="includesOrnek()" class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+          Kontrol Et
+        </button>
+        </div>
+        <p id="includesSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- toLowerCase - Yazıyı küçük harfe çevirir.-->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-gray-700 mb-2">toLowerCase()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Yazıyı küçük harfe çevirir.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="lowerOrnek()" class="bg-gray-700 text-white px-4 py-2 rounded-lg">
+          Küçük Harf Yap
+        </button>
+        </div>
+        <p id="lowerSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- toUpperCase - yazıyı büyük harfe çevirir. -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-orange-600 mb-2">toUpperCase()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Yazıyı büyük harfe çevirir.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="upperOrnek()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+          Büyük Harf Yap
+        </button>
+        </div>
+        <p id="upperSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- TRİM - Metnin başındaki ve sonundaki boşlukları siler.  -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-lime-600 mb-2">trim()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Baş ve sondaki boşlukları temizler.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="trimOrnek()" class="bg-green-900 text-white px-4 py-2 rounded-lg">
+          Boşlukları Temizle
+        </button>
+        </div>
+        <p id="trimSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- SPLİT - Metni parçalayarak diziye çevirir. -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-cyan-600 mb-2">split()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Metni kelimelere ayırır.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="splitOrnek()" class="bg-yellow-600 text-white px-4 py-2 rounded-lg">
+          Parçala
+        </button>
+        </div>
+        <p id="splitSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- JOİN- Diziyi metine çevirir.  -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-fuchsia-600 mb-2">join()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Diziyi metne çevirir.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="joinOrnek()" class="bg-gray-500 text-white px-4 py-2 rounded-lg">
+          Birleştir
+        </button>
+        </div>
+        <p id="joinSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- parseFloat- Metni ondalıklı sayıya çevirir. -->
+      <div class="bg-white p-5 rounded-xl shadow">
+        <h2 class="text-xl font-bold text-center text-emerald-600 mb-2">parseFloat()</h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          String fiyatları sayıya çevirip toplar.
+        </p><br>
+        <div class="flex justify-center">
+        <button onclick="parseFloatOrnek()" class="bg-red-900 border border-orange-900 text-white px-4 py-2 rounded-lg">
+          Hesapla
+        </button>
+        </div>
+        <p id="parseFloatSonuc" class="mt-3 font-semibold text-center text-gray-800"></p>
+      </div>
+
+      <!-- setInterval - Belirli aralıklarla sürekli çalışır./ clearInterval - Çalışan intervali durdurur.  -->
+      <div class="bg-white p-5 rounded-xl shadow md:col-span-2">
+        <h2 class="text-xl text-center font-bold text-violet-600 mb-2">
+          setInterval() ve clearInterval()
+        </h2>
+        <p class="text-sm text-center text-gray-600 mb-3">
+          Sayaç her saniye artar. Durdur butonu clearInterval kullanır.
+        </p>
+
+        <div class="flex justify-center gap-3">
+          <button onclick="sayaciBaslat()" class="bg-pink-600 text-white px-4 py-2 rounded-lg">
+            Başlat
+          </button>
+
+          <button onclick="sayaciDurdur()" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+            Durdur
+          </button>
+        </div>
+
+        <p id="sayacSonuc" class="mt-3 text-2xl font-bold text-center text-gray-800">
+          0
+        </p>
+      </div>
+
+    </div> 
+    </div>
+    <script>
+    
+        function mapExample() {
+      const sayilar = [1, 2, 3, 4];
+
+      const yeniSayilar = sayilar.map(function(sayi) {
+        return sayi * 2;
+      });
+
+      document.getElementById("mapSonuc").textContent =
+        "Sonuç: " + yeniSayilar.join(", ");
+    }
+
+    
+    function findExample(){
+        const yaslar = [15, 22, 17, 30, 19];
+
+        const sonuc = yaslar.find(function(yas) {
+        return yas >= 18;
+      });
+
+      document.getElementById("findSonuc").textContent =
+        "18 yaşından büyük ilk kişi: " + sonuc;
+    }
+
+    
+    function reduceOrnek() {
+      const fiyatlar = [100, 250, 50];
+
+      const toplam = fiyatlar.reduce(function(toplamDeger, fiyat) {
+        return toplamDeger + fiyat;
+      }, 0);
+
+      document.getElementById("reduceSonuc").textContent =
+        "Toplam fiyat: " + toplam + " TL";
+    }
+
+    function filterOrnek() {
+      const notlar = [35, 60, 45, 80, 90];
+
+      const gecenler = notlar.filter(function(not) {
+        return not >= 50;
+      });
+
+      document.getElementById("filterSonuc").textContent =
+        "Geçen notlar: " + gecenler.join(", ");
+    }
+
+    function someOrnek() {
+      const stoklar = [0, 0, 5, 0];
+
+      const stokVarMi = stoklar.some(function(stok) {
+        return stok > 0;
+      });
+
+      document.getElementById("someSonuc").textContent =
+        stokVarMi ? "Evet, stokta ürün var." : "Hayır, stokta ürün yok.";
+    }
+
+    function everyOrnek() {
+      const notlar = [70, 85, 90, 60];
+
+      const herkesGectiMi = notlar.every(function(not) {
+        return not >= 50;
+      });
+
+      document.getElementById("everySonuc").textContent =
+        herkesGectiMi ? "Evet, herkes geçti." : "Hayır, kalan var.";
+    }
+
+    let meyveler = ["Elma", "Muz"];
+
+    function pushOrnek() {
+      meyveler.push("Çilek");
+
+      document.getElementById("pushSonuc").textContent =
+        "Meyveler: " + meyveler.join(", ");
+    }
+
+    function includesOrnek() {
+      const sehirler = ["Ankara", "İstanbul", "İzmir"];
+
+      const varMi = sehirler.includes("İstanbul");
+
+      document.getElementById("includesSonuc").textContent =
+        varMi ? "İstanbul listede var." : "İstanbul listede yok.";
+    }
+
+    function lowerOrnek() {
+    const metin = "MERHABA EZGİ";
+
+    document.getElementById("lowerSonuc").textContent =
+      metin.toLowerCase();
+  }
+
+    function upperOrnek() {
+      const metin = "merhaba ezgi";
+
+      document.getElementById("upperSonuc").textContent =
+        metin.toUpperCase();
+    }
+
+    function trimOrnek() {
+      const metin = "     Ezgi Kuzu     ";
+
+      document.getElementById("trimSonuc").textContent =
+        "Temizlenmiş hali: " + metin.trim();
+    }
+
+    function splitOrnek() {
+      const cumle = "HTML Tailwind JavaScript";
+
+      const kelimeler = cumle.split(" ");
+
+      document.getElementById("splitSonuc").textContent =
+        "Kelimeler: " + kelimeler.join(" / ");
+    }
+
+    function joinOrnek() {
+      const dersler = ["HTML", "CSS", "JavaScript"];
+
+      const sonuc = dersler.join(" - ");
+
+      document.getElementById("joinSonuc").textContent =
+        sonuc;
+    }
+
+    function parseFloatOrnek() {
+      const fiyat1 = "19.90";
+      const fiyat2 = "35.50";
+
+      const toplam = parseFloat(fiyat1) + parseFloat(fiyat2);
+
+      document.getElementById("parseFloatSonuc").textContent =
+        "Toplam: " + toplam + " TL";
+    }
+
+    let sayac = 0;
+    let intervalId;
+
+    function sayaciBaslat() {
+      clearInterval(intervalId);
+
+      intervalId = setInterval(function() {
+        sayac++;
+        document.getElementById("sayacSonuc").textContent = sayac;
+      }, 1000);
+    }
+
+    function sayaciDurdur() {
+      clearInterval(intervalId);
+    }
+
+    </script>
+</body>
+</html>
